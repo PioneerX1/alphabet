@@ -43,11 +43,14 @@ public class AlphabetAdapter extends BaseAdapter {
         if (convertView == null) {
             // get layout from xml file
             gridView = inflater.inflate(R.layout.alphabet_grid_item, null);
+
+
             // pull views
             TextView letterView = (TextView) gridView
                     .findViewById(R.id.grid_item_letter);
+
             // set values into views
-            letterView.setText("A");   // using dummy data for now
+            letterView.setText(mLetters[position]);
         } else {
             gridView = (View) convertView;
         }
