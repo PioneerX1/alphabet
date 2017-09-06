@@ -2,6 +2,7 @@ package compioneerx1.httpsgithub.alphabet;
 
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,10 +14,12 @@ public class AlphabetAdapter extends BaseAdapter {
 
     private Context mContext;
     private String[] mLetters;
+    private Typeface mTypeface;
 
-    public AlphabetAdapter (Context context, String[] letters) {
+    public AlphabetAdapter (Context context, String[] letters, Typeface typeface) {
         this.mContext = context;
         this.mLetters = letters;
+        this.mTypeface = typeface;
     }
 
     @Override
@@ -51,6 +54,7 @@ public class AlphabetAdapter extends BaseAdapter {
 
             // set values into views
             letterView.setText(mLetters[position]);
+            letterView.setTypeface(mTypeface);
         } else {
             gridView = (View) convertView;
         }
